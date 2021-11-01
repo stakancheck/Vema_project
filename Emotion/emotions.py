@@ -39,8 +39,6 @@ video_capture = cv2.VideoCapture(0)
 cap = None
 if (USE_WEBCAM == True):
     cap = cv2.VideoCapture(0)  # Webcam source
-else:
-    cap = cv2.VideoCapture('./demo/dinner.mp4')  # Video file source
 
 while cap.isOpened():  # True:
     ret, bgr_image = cap.read()
