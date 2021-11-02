@@ -49,7 +49,7 @@ class App(QWidget):
 
     def game_start(self):
         self.close()
-        os.system("python main.py")
+        os.system("python history.py --index 1")
 
     def close_w(self):
         sys.exit()
