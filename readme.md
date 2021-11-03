@@ -9,7 +9,7 @@
 
 **Алфавит:**
 
-![](Hand\sign_language\alpha.png)
+![](Hand/sign_language/alpha.png)
 
 
 # Распознование Мимики Лица
