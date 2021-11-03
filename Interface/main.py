@@ -12,17 +12,17 @@ CAMERA_WIDTH = 640
 CAMERA_HEIGHT = 480
 
 data = {
-    1: 'ЗАДАНИЕ НОМЕР 1',
-    2: 'ЗАДАНИЕ НОМЕР 2',
-    3: 'ЗАДАНИЕ НОМЕР 3',
-    4: 'ЗАДАНИЕ НОМЕР 4',
+    1: 'ПОДПИШИ ДОКУМЕНТ, РИСУЯ В ВОЗДУХЕ!',
+    2: 'СКАЖИ ТОРГОВЦУ "DRAGON"',
+    3: 'НУЖНО ОТРАЗИТЬ СЛОВО "АРБАДАКАРБА"',
+    4: 'ПОКАЖИ ЭМОЦИЮ РАДОСТЬ ИЛИ ЗЛОСТЬ, ЭТО ПОВЛИЯЕТ НА СЮЖЕТ!',
 }
 
 data_pic = {
-    1: 'pic\menu_pic.png',
-    2: 'pic\menu_pic.png',
-    3: 'pic\menu_pic.png',
-    4: 'pic\menu_pic.png',
+    1: 'pic\\first.png',
+    2: 'pic\second.png',
+    3: 'pic\\third.png',
+    4: 'pic\\fourth.png'
 }
 
 
@@ -118,7 +118,7 @@ class App(QWidget):
         self.next.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
 
         self.textEdit.setText(text)
-        self.textEdit.setFont(QFont('Arial', 30))
+        self.textEdit.setFont(QFont('Arial', 20))
         self.textEdit.setAlignment(QtCore.Qt.AlignCenter | QtCore.Qt.AlignVCenter)
         self.textEdit.setStyleSheet("background-color: #cc7b63;"
                                     "border: 10px solid rgb(128, 57, 57);"
@@ -130,8 +130,16 @@ class App(QWidget):
         self.exit.clicked.connect(self.close_w)
         self.menu.clicked.connect(self.menu_start)
         self.next.clicked.connect(self.next_level)
+
+        self.next_l.setVisible(False)
+
+        QtCore.QTimer.singleShot(3000, self.timer_next)
+
         self.initUI()
         QtCore.QMetaObject.connectSlotsByName(self)
+
+    def timer_next(self):
+        self.next_l.setVisible(True)
 
     def next_level(self):
         self.close()
@@ -150,12 +158,13 @@ class App(QWidget):
 
     def initUI(self):
         # self.camera_pic = QLabel(self)
-        self.camera.resize(640, 480)
+        # self.camera.resize(640, 480)
         # self.camera_pic.move(300, 300)
 
-        th = Thread(self)
-        th.changePixmap.connect(self.setImage)
-        th.start()
+
+        # th = Thread(self)
+        # th.changePixmap.connect(self.setImage)
+        # th.start()
         self.show()
 
 

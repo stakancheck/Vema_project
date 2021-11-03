@@ -5,7 +5,7 @@ from collections import deque
 
 cap = cv2.VideoCapture(0)
 
-pts = deque(maxlen=64)
+pts = deque(maxlen=100)
 
 Lower_green = np.array([110, 50, 50])
 Upper_green = np.array([130, 255, 255])

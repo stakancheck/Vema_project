@@ -20,27 +20,30 @@ class App(QWidget):
         self.label.setPixmap(QPixmap('pic/menu_pic.png'))
 
         self.exit_l = QLabel(self.centralwidget)
-        self.exit_l.setGeometry(QtCore.QRect(220, 640, 186, 60))
+        self.exit_l.setGeometry(QtCore.QRect(547, 200, 186, 60))
         self.exit_l.setText("")
         self.exit_l.setObjectName("exit")
         self.exit_l.setPixmap(QPixmap('pic/exit.png'))
+
         self.start_l = QLabel(self.centralwidget)
-        self.start_l.setGeometry(QtCore.QRect(20, 640, 186, 60))
+        self.start_l.setGeometry(QtCore.QRect(547, 130, 186, 60))
         self.start_l.setText("")
         self.start_l.setObjectName("start")
         self.start_l.setPixmap(QPixmap('pic/start.png'))
         self.start_l.setStyleSheet("background-color: red;")
 
         self.exit = QtWidgets.QPushButton(self.centralwidget)
-        self.exit.setGeometry(QtCore.QRect(220, 640, 186, 60))
+        self.exit.setGeometry(QtCore.QRect(547, 200, 186, 60))
         self.exit.setText("")
         self.exit.setObjectName("exit")
         self.exit.clicked.connect(self.close_w)
+
         self.start = QtWidgets.QPushButton(self.centralwidget)
-        self.start.setGeometry(QtCore.QRect(20, 640, 186, 60))
+        self.start.setGeometry(QtCore.QRect(547, 130, 186, 60))
         self.start.setText("")
         self.start.setObjectName("start")
         self.start.clicked.connect(self.game_start)
+
         self.exit.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
         self.start.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
 
